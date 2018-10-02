@@ -12,96 +12,116 @@
 -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.eclipse.ee4j</groupId>
-    <artifactId>project</artifactId>
-    <version>1.0.1</version>
-  </parent>
+    <parent>
+        <groupId>org.eclipse.ee4j</groupId>
+        <artifactId>project</artifactId>
+        <version>1.0.1</version>
+    </parent>
 
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.sun.wts.tools.ant</groupId>
-  <artifactId>package-rename-task</artifactId>
-  <packaging>maven-plugin</packaging>
-  <version>1.6-SNAPSHOT</version>
-  <name>Package rename ant task</name>
-  <inceptionYear>2006</inceptionYear>
-  <url>http://package-rename-task.java.net/</url>
+    <groupId>com.sun.wts.tools.ant</groupId>
+    <artifactId>package-rename-task</artifactId>
+    <packaging>maven-plugin</packaging>
+    <version>1.5.2-SNAPSHOT</version>
+    <name>Package rename ant task</name>
+    <inceptionYear>2006</inceptionYear>
+    <url>http://package-rename-task.java.net/</url>
 
-  <licenses>
-    <license>
-      <name>Eclipse Distribution License - v 1.0</name>
-      <url>http://www.eclipse.org/org/documents/edl-v10.php</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
+    <scm>
+        <connection>scm:git:ssh://git@github.com:eclipse-ee4j/metro-package-rename-task.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:eclipse-ee4j/metro-package-rename-task.git</developerConnection>
+        <url>https://github.com/eclipse-ee4j/metro-package-rename-task</url>
+        <tag>HEAD</tag>
+    </scm>
 
-  <scm>
-    <connection>scm:git:ssh://git@github.com/eclipse-ee4j/metro-package-rename-task.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/eclipse-ee4j/metro-mimepull.git</developerConnection>
-    <url>https://github.com/eclipse-ee4j/metro-mimepull</url>
-    <tag>HEAD</tag>
-  </scm>
-  <developers>
-    <developer>
-      <id>jungicz</id>
-      <name>Lukas Jungmann</name>
-      <email>lukas.jungmann@oracle.com</email>
-      <organization>Oracle Corporation</organization>
-    </developer>
-    <developer>
-      <name>Kohsuke Kawaguchi</name>
-    </developer>
-  </developers>
+    <licenses>
+        <license>
+            <name>Eclipse Distribution License - v 1.0</name>
+            <url>http://www.eclipse.org/org/documents/edl-v10.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
-  <dependencies>
-    <dependency>
-      <groupId>ant</groupId>
-      <artifactId>ant</artifactId>
-      <version>1.6</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.maven</groupId>
-      <artifactId>maven-plugin-api</artifactId>
-      <version>3.5.2</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.maven</groupId>
-      <artifactId>maven-core</artifactId>
-      <version>3.5.2</version>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+    <developers>
+        <developer>
+            <name>Lukas Jungmann</name>
+            <email>lukas.jungmann@oracle.com</email>
+            <organization>Oracle Corporation</organization>
+        </developer>
+        <developer>
+            <name>Kohsuke Kawaguchi</name>
+        </developer>
+    </developers>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <organization>
+        <name>Oracle</name>
+        <url>http://www.oracle.com/</url>
+    </organization>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.7.0</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-      <!--plugin>
-        <groupId>com.sun.wts.tools.ant</groupId>
-        <artifactId>package-rename-task</artifactId>
-        <configuration>
-          <patterns>
-            <com.sun.wts.tools.ant>com.sun.internal.wts.tools.ant</com.sun.wts.tools.ant>
-          </patterns>
-        </configuration>
-      </plugin-->
-    </plugins>
-  </build>
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/eclipse-ee4j/metro-package-rename-task/issues</url>
+    </issueManagement>
+
+    <mailingLists>
+        <mailingList>
+            <name>Eclipse Metro mailing list</name>
+            <post>metro-dev@eclipse.org</post>
+            <subscribe>https://accounts.eclipse.org/mailing-list/metro-dev</subscribe>
+            <unsubscribe>https://accounts.eclipse.org/mailing-list/metro-dev</unsubscribe>
+            <archive>https://www.eclipse.org/lists/metro-dev</archive>
+        </mailingList>
+    </mailingLists>
+
+    <dependencies>
+        <dependency>
+            <groupId>ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-api</artifactId>
+            <version>3.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-core</artifactId>
+            <version>3.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <!--plugin>
+              <groupId>com.sun.wts.tools.ant</groupId>
+              <artifactId>package-rename-task</artifactId>
+              <configuration>
+                <patterns>
+                  <com.sun.wts.tools.ant>com.sun.internal.wts.tools.ant</com.sun.wts.tools.ant>
+                </patterns>
+              </configuration>
+            </plugin-->
+        </plugins>
+    </build>
 </project>
