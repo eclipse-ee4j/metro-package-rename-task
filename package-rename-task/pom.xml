@@ -25,7 +25,7 @@
     <packaging>maven-plugin</packaging>
     <version>1.5.2-SNAPSHOT</version>
     <name>Package rename ant task</name>
-    <url>http://package-rename-task.java.net/</url>
+    <url>https://github.com/eclipse-ee4j/metro-package-rename-task</url>
 
     <scm>
         <connection>scm:git:ssh://git@github.com:eclipse-ee4j/metro-package-rename-task.git</connection>
@@ -52,13 +52,6 @@
             <name>Kohsuke Kawaguchi</name>
         </developer>
     </developers>
-
-    <inceptionYear>2006</inceptionYear>
-
-    <organization>
-        <name>Oracle</name>
-        <url>http://www.oracle.com/</url>
-    </organization>
 
     <issueManagement>
         <system>github</system>
@@ -100,6 +93,7 @@
     </dependencies>
 
     <properties>
+        <legal.doc.source>${project.basedir}/..</legal.doc.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -107,6 +101,11 @@
 
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
@@ -136,6 +135,31 @@
         </pluginManagement>
 
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-legal-resource</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>add-resource</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${legal.doc.source}</directory>
+                                    <includes>
+                                        <include>NOTICE.md</include>
+                                        <include>LICENSE.md</include>
+                                    </includes>
+                                    <targetPath>META-INF</targetPath>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
