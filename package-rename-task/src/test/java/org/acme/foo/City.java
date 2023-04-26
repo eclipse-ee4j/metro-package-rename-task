@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2018, 2023 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -31,6 +31,6 @@ public class City extends SanFrancisco {
         System.out.println("Lorg/acme/foo/us/SanFrancisco;");
 
         // literal
-        Class cl = org.acme.foo.us.co.Springfield.class;
+        Class<?> cl = org.acme.foo.us.co.Springfield.class;
     }
 }
